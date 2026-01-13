@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blank Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="notification-container">
+        <div class="notification-header">
+            <img src="svgs/Chatbot_aiBadge.svg" alt="AI Badge" class="ai-badge">
+            <p class="notification-text">Your changes have been applied.</p>
+        </div>
+        <div class="button-row">
+            <button class="action-button" type="button" aria-label="Copy">
+                <img src="svgs/copy.svg" alt="Copy">
+            </button>
+            <button class="action-button" type="button" aria-label="Thumbs up">
+                <img src="svgs/thumbsUp.svg" alt="Thumbs up">
+            </button>
+            <button class="action-button thumbs-down" type="button" aria-label="Thumbs down" id="dislike-btn">
+                <img src="svgs/thumbsDown.svg" alt="Thumbs down">
+            </button>
+            <button class="action-button" type="button" aria-label="Sync">
+                <img src="svgs/sync.svg" alt="Sync">
+            </button>
+        </div>
+    </div>
+
+    <div class="notification-container notification-container-copy">
+        <div class="notification-header">
+            <img src="svgs/Chatbot_aiBadge.svg" alt="AI Badge" class="ai-badge">
+            <p class="notification-text">Your changes have been applied.</p>
+        </div>
+        <div class="button-row">
+            <button class="action-button" type="button" aria-label="Copy">
+                <img src="svgs/copy.svg" alt="Copy">
+            </button>
+            <button class="action-button" type="button" aria-label="Thumbs up">
+                <img src="svgs/thumbsUp.svg" alt="Thumbs up">
+            </button>
+            <button class="action-button thumbs-down" type="button" aria-label="Thumbs down" id="dislike-btn-2">
+                <img src="svgs/thumbsDown.svg" alt="Thumbs down">
+            </button>
+            <button class="action-button" type="button" aria-label="Sync">
+                <img src="svgs/sync.svg" alt="Sync">
+            </button>
+        </div>
+        <!-- Inline Dismissible Card -->
+        <div class="dismissible-card" id="dismissible-card">
+            <div class="dismissible-card-header">
+                <h3 class="dismissible-card-title">What would you like to report...</h3>
+                <button class="dismissible-card-close" id="dismissible-card-close" aria-label="Close">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 4L4 12M4 4l8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="dismissible-card-content dismissible-card-content-wrap">
+                <button class="tag tag-wrap" type="button" data-tag="instructions">Didn't follow instructions</button>
+                <button class="tag tag-wrap" type="button" data-tag="response">Do not like response</button>
+                <button class="tag tag-wrap" type="button" data-tag="information">Invalid or missing information</button>
+                <button class="tag tag-wrap" type="button" data-tag="refused">Refused when it shouldn't have</button>
+                <button class="tag tag-wrap" type="button" data-tag="false-claim">False claim to have completed the task</button>
+                <button class="tag tag-wrap" type="button" data-tag="other">Other</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification-container notification-container-copy">
+        <div class="notification-header">
+            <img src="svgs/Chatbot_aiBadge.svg" alt="AI Badge" class="ai-badge">
+            <p class="notification-text">Your changes have been applied.</p>
+        </div>
+        <div class="button-row">
+            <button class="action-button" type="button" aria-label="Copy">
+                <img src="svgs/copy.svg" alt="Copy">
+            </button>
+            <button class="action-button" type="button" aria-label="Thumbs up">
+                <img src="svgs/thumbsUp.svg" alt="Thumbs up">
+            </button>
+            <button class="action-button thumbs-down" type="button" aria-label="Thumbs down" id="dislike-btn-3">
+                <img src="svgs/thumbsDown.svg" alt="Thumbs down">
+            </button>
+            <button class="action-button" type="button" aria-label="Sync">
+                <img src="svgs/sync.svg" alt="Sync">
+            </button>
+        </div>
+        <!-- Inline Dismissible Card with Selectable Tags -->
+        <div class="dismissible-card" id="dismissible-card-3">
+            <div class="dismissible-card-header">
+                <h3 class="dismissible-card-title">What would you like to report...</h3>
+                <button class="dismissible-card-close" id="dismissible-card-close-3" aria-label="Close">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 4L4 12M4 4l8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="dismissible-card-content">
+                <button class="tag tag-selectable" type="button" data-tag="instructions">Didn't follow instructions</button>
+                <button class="tag tag-selectable" type="button" data-tag="response">Do not like response</button>
+                <button class="tag tag-selectable" type="button" data-tag="information">Invalid or missing information</button>
+                <button class="tag tag-selectable" type="button" data-tag="refused">Refused when it shouldn't have</button>
+                <button class="tag tag-selectable" type="button" data-tag="false-claim">False claim to have completed the task</button>
+                <div class="tag tag-selectable tag-other" data-tag="other">
+                    <div class="tag-other-text">Other...</div>
+                    <div class="tag-other-expanded" id="other-expanded">
+                        <div class="form-group">
+                            <label for="other-details">Additional Details (optional)</label>
+                            <textarea id="other-details" class="form-textarea" rows="4" placeholder=""></textarea>
+                        </div>
+                        <p class="modal-info">We will use your feedback to help improve our AI agent.</p>
+                        <button class="btn btn-submit btn-inline-submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="modal-title">Tell Us Your Feedback</h2>
+                <button class="modal-close" id="close-btn" aria-label="Close modal">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 4L4 12M4 4l8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="form-group">
+                    <label for="issue-type">What type of issue would you like to report?</label>
+                    <div class="select-wrapper">
+                        <select id="issue-type" class="form-select">
+                            <option value="">Select</option>
+                            <option value="bug">Bug</option>
+                            <option value="feature">Feature Request</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="additional-details">Additional Details (optional)</label>
+                    <textarea id="additional-details" class="form-textarea" rows="4" placeholder=""></textarea>
+                </div>
+                <p class="modal-info">We will use your feedback to help improve our AI agent.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-cancel" id="cancel-btn">Cancel</button>
+                <button class="btn btn-submit">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer"></footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
